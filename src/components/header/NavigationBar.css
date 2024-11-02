@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Pacifico&display=swap');
+
+.website-name {
+    font-family: "Pacifico", cursive;
+    display: inline-block;
+}
+
+.website-logo {
+    width: 40px;
+    vertical-align: middle;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

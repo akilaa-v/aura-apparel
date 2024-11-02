@@ -1,0 +1,41 @@
+.product-container {
+    height: 400px;
+    margin: 15px;
+    flex-basis: 20%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-family: "Quicksand", sans-serif;
+}
+
+.product-img {
+    height: 300px;
+    width: 100%;
+    box-shadow: #00000026 2px 2px 2.5px;
+    border-radius: 5px;
+}
+
+.product-details {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.add-to-cart-btn {
+    color: white;
+    background-color: #000000;
+    float:right;
+    margin-top: 15px;
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-family: "Quicksand", sans-serif;
+}
+
+.add-to-cart-btn:hover,
+.add-to-cart-btn:active,
+.add-to-cart-btn:focus {
+    color: black;
+    border: 1px solid #d3d3d3;
+    box-shadow: 0 0 5pt 0.5pt #D3D3D3;
+    background-color: white;
+}

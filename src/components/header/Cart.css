@@ -1,0 +1,26 @@
+.cart-container {
+	width: 180px;
+}
+
+.cart-img {
+	height: 30px;
+}
+
+.sign-out-btn {
+	color: white;
+	background-color: black;
+	float: right;
+	padding: 8px 20px;
+	border-radius: 8px;
+	border: none;
+	font-family: "Quicksand", sans-serif;
+}
+
+.sign-out-btn:hover,
+.sign-out-btn:active,
+.sign-out-btn:focus {
+	color: black;
+	border: 1px solid #d3d3d3;
+	box-shadow: 0 0 5pt 0.5pt #d3d3d3;
+	background-color: white;
+}
