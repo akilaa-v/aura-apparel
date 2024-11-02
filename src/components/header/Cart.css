@@ -17,8 +17,7 @@
 }
 
 .sign-out-btn:hover,
-.sign-out-btn:active,
-.sign-out-btn:focus {
+.sign-out-btn:active {
 	color: black;
 	border: 1px solid #d3d3d3;
 	box-shadow: 0 0 5pt 0.5pt #d3d3d3;

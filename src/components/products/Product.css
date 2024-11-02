@@ -5,6 +5,7 @@
     flex-grow: 0;
     flex-shrink: 0;
     font-family: "Quicksand", sans-serif;
+    display: inline-block;
 }
 
 .product-img {
@@ -31,11 +32,35 @@
     font-family: "Quicksand", sans-serif;
 }
 
-.add-to-cart-btn:hover,
-.add-to-cart-btn:active,
-.add-to-cart-btn:focus {
+.add-to-cart-btn:hover {
     color: black;
     border: 1px solid #d3d3d3;
     box-shadow: 0 0 5pt 0.5pt #D3D3D3;
     background-color: white;
+}
+
+.action-btn-container {
+    font-family: "Quicksand", sans-serif;
+    float: right;
+}
+
+.action-btn {
+    color: white;
+    background-color: #000000;
+    border-radius: 4px;
+    border: none;
+    padding: 6px 10px;
+    font-size: 16px;
+    margin-left: 20px;
+    border: 1px solid transparent; 
+}
+
+.action-btn:hover {
+    color: black;
+    border: 1px solid #d3d3d3;
+    background-color: white;
+}
+
+.product-qty {
+    margin-left: 20px;
 }

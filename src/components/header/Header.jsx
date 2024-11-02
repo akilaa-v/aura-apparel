@@ -1,9 +1,9 @@
 import Cart from "./Cart";
 import SearchBar from "./SearchBar";
-import "./NavigationBar.css";
+import "./Header.css";
 import User from "./User";
 
-const NavigationBar = () => {
+const Header = () => {
 	return (
 		<header className="header-container">
 			<h1 className="website-name">Aura Apparel</h1>
@@ -14,4 +14,4 @@ const NavigationBar = () => {
 	);
 };
 
-export default NavigationBar;
+export default Header;
