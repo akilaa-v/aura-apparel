@@ -1,4 +1,4 @@
-const cartReducer = (state, action) => {
+const CartReducer = (state, action) => {
 	
 	const updatedProducts = [...state.products];
 
@@ -42,4 +42,4 @@ const cartReducer = (state, action) => {
 	}
 };
 
-export default cartReducer;
+export default CartReducer;

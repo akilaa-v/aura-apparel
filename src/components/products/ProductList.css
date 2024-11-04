@@ -4,3 +4,7 @@ section {
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.center{
+    text-align: center;
+}

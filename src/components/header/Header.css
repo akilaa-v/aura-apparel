@@ -15,3 +15,22 @@
     align-items: center;
     justify-content: space-around;
 }
+
+.search-form {
+    display: inline-block;
+    padding: 0 20px;
+ }
+
+.cart-container {
+	width: 180px;
+}
+
+.cart-btn{
+	border: none;
+	background-color: #eeeeee;
+	cursor: pointer;
+}
+
+.cart-img {
+	height: 30px;
+}

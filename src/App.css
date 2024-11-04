@@ -11,4 +11,27 @@
 body {
 	margin: 0;
 	font-family: "Quicksand", sans-serif;
+	background-color: #eeeeee;
+
+	/* Styling the scrollbar */
+	::-webkit-scrollbar {
+		width: 6px;
+		/* Width of the scrollbar */
+	}
+
+	/* Track (background of the scrollbar) */
+	::-webkit-scrollbar-track {
+		background: #f1f1f1;
+		/* Light background for the track */
+		border-radius: 16px;
+		/* Rounding */
+	}
+
+	/* Thumb (scroll handle) */
+	::-webkit-scrollbar-thumb {
+		background: #d4d3d3;
+		/* Color of the scrollbar thumb */
+		border-radius: 10px;
+	}
+
 }

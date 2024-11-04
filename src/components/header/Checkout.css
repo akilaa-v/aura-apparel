@@ -1,0 +1,21 @@
+.checkout-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-container {
+    min-height: 330px;
+}
+
+.checkout-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.input-class {
+    width: 48px;
+}

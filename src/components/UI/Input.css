@@ -1,9 +1,15 @@
-form {
-    display: inline-block;
-    padding: 0 20px;
- }
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
 
- .input {
+.label {
+    width: 72px;
+}
+
+.input {
     width: 300px;
     border-radius: 5px;
     height: 35px;
@@ -11,15 +17,16 @@ form {
     transition: 0.5s;
     font-family: "Quicksand", sans-serif;
     padding: 10px;
-    color: #b5b1b1;
+    color: #595656;
     font-size: 16px;
     float: right
 }
 
- input[type=text]:hover{
+ .input:hover{
     box-shadow: 0 0 5pt 0.5pt #D3D3D3;
   }
-  input[type=text]:focus {
+  .input:focus {
     box-shadow: 0 0 5pt 2pt #D3D3D3;
     outline-width: 0px;
+    border: 1px solid black;
   }

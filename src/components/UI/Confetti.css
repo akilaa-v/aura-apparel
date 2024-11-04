@@ -1,0 +1,15 @@
+.success-text {
+    text-align: center;
+    margin-top: 30%;
+}
+
+.confetti-container {
+    position: absolute; /* Position confetti absolutely */
+    top: 0;
+    left: 0;
+    width: 100%; /* Cover the entire modal */
+    height: 100%; /* Cover the entire modal */
+    pointer-events: none; /* Allow clicks to pass through */
+    z-index: 999; /* Ensure confetti appears above modal content */
+    overflow: hidden;
+  }

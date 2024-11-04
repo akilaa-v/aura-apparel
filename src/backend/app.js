@@ -36,10 +36,10 @@ app.post('/orders', async (req, res) => {
     orderData.customer.name.trim() === '' ||
     orderData.customer.street === null ||
     orderData.customer.street.trim() === '' ||
-    orderData.customer['postal-code'] === null ||
-    orderData.customer['postal-code'].trim() === '' ||
-    orderData.customer.city === null ||
-    orderData.customer.city.trim() === ''
+    orderData.customer.pincode === null ||
+    orderData.customer.pincode.trim() === '' ||
+    orderData.customer.address === null ||
+    orderData.customer.address.trim() === ''
   ) {
     return res.status(400).json({
       message:
@@ -51,10 +51,11 @@ app.post('/orders', async (req, res) => {
     ...orderData,
     id: (Math.random() * 1000).toString(),
   };
-  const orders = await fs.readFile('./data/orders.json', 'utf8');
+  const orders = await fs.readFile('assets/orders.json', 'utf8');
+  console.log("printing orders", orders);
   const allOrders = JSON.parse(orders);
   allOrders.push(newOrder);
-  await fs.writeFile('./data/orders.json', JSON.stringify(allOrders));
+  await fs.writeFile('assets/orders.json', JSON.stringify(allOrders));
   res.status(201).json({ message: 'Order created!' });
 });
 

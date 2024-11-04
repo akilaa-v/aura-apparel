@@ -1,26 +1,25 @@
 import { useEffect, useState } from "react";
 import Product from "./Product";
 import "./ProductList.css";
+import useHttp from "../hooks/useHttp";
+import Error from "../UI/Error";
 
+const config = {};
 const ProductList = () => {
-	const [fetchedProducts, setFetchedProducts] = useState([]);
+	const { data: fetchedProducts, loading, error } = useHttp(
+		"http://localhost:3000/products",
+		config,
+		[]
+	);
 
-	useEffect(() => {
-		const fetchProducts = async () => {
-			const response = await fetch("http://localhost:3000/products");
-			const products = await response.json();
-			setFetchedProducts(products);
-		};
-		fetchProducts();
-	}, []);
+	if (loading) {
+		return <p className="center">Loading the products...</p>;
+	}
 
-	// const fetchProducts = async () => {
-	// 	const response = await fetch("http:localhost:3000/products");
-	// 	const products = await response.json();
-	// 	setFetchedProducts(products);
-	// };
+	if(error) {
+		return <Error title="Something went wrong!" message={error}/>
+	}
 
-	// Need to update the product component to have an iteration based on the api results
 	return (
 		<section>
 			{fetchedProducts &&

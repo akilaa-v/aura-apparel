@@ -1,0 +1,13 @@
+.error {
+    width: 300px;
+    height: 100px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 12px;
+    background-color: #c5c5c5;
+    margin: auto;
+    margin-bottom: 30px;
+}
+.error h3 {
+    margin:10px 0;
+}
