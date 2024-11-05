@@ -33,6 +33,10 @@ const useHttp = (url, config, initialData) => {
 		[url, config]
 	);
 
+	const clearData = () => {
+		setData(initialData);
+	}
+
 	useEffect(() => {
 		if ((config && (!config.method || config.method === "GET")) || !config) {
 			sendRequest();
@@ -44,6 +48,7 @@ const useHttp = (url, config, initialData) => {
 		error,
 		loading,
 		sendRequest,
+		clearData
 	};
 };
 

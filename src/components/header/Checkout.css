@@ -19,3 +19,7 @@
 .input-class {
     width: 48px;
 }
+
+.success-btn {
+    margin-top: 160px; /* Optional: add some margin if you want it slightly offset */
+}

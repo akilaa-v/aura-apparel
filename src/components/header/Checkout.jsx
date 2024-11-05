@@ -25,6 +25,7 @@ const Checkout = () => {
 		error,
 		loading: isSending,
 		sendRequest,
+		clearData
 	} = useHttp("http://localhost:3000/orders", requestConfig, []);
 
 	const totalPrice = cartCtx.products.reduce(
@@ -53,21 +54,32 @@ const Checkout = () => {
 		);
 	};
 
+	const handleFinish = () => {
+		userProgressCtx.hide();
+		cartCtx.clearCart();
+		clearData();
+	};
+
 	let actions = <Button>Place order</Button>;
 
 	if (isSending) {
 		actions = <Button disabled={true}>Sending data...</Button>;
 	}
 
-    console.log(data , error)
-	if (data !== null && typeof data === 'object' && Object.keys(data).length > 0 && !error) {
+	console.log(data, error);
+	if (
+		data !== null &&
+		typeof data === "object" &&
+		Object.keys(data).length > 0 &&
+		!error
+	) {
 		return (
 			<Modal
 				open={userProgressCtx.userProgress === "checkout"}
-				onClose={handleCloseCart}
+				onClose={handleFinish}
 			>
 				<ConfettiContainer />
-                <Button onClick={handleCloseCart}>Close</Button>
+				<Button onClick={handleFinish} classes="success-btn">Close</Button>
 			</Modal>
 		);
 	}

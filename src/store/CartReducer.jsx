@@ -3,7 +3,6 @@ const CartReducer = (state, action) => {
 	const updatedProducts = [...state.products];
 
 	switch (action.type) {
-		
 		case "ADD_PRDCT": {
 			const existingProductIndex = state.products.findIndex(
 				(product) => product.id === action.product.id
@@ -35,6 +34,9 @@ const CartReducer = (state, action) => {
 			}
 
 			return { ...state, products: updatedProducts };
+		}
+		case "CLEAR_CART": {
+			return { ...state, products: [] };
 		}
 		default: {
 			return state;
