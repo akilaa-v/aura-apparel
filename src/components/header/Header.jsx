@@ -2,22 +2,19 @@ import "./Header.css";
 import User from "./User";
 import logo from "../../assets/logo.png";
 import cart from "../../assets/cart.svg";
-import { useContext } from "react";
-import UserProgressContext from "../../store/UserProgressContext";
 import Button from "../UI/Button";
 import Input from "../UI/Input";
 import { useDispatch, useSelector } from "react-redux";
+import { userProgressActions } from "../../store/UserProgressSlice";
 
 const Header = () => {
-	const products = useSelector(state => state.products);
+	const products = useSelector(state => state.cart.products);
 	const dispatch = useDispatch();
 	// const userProgressCtx = useContext(UserProgressContext);
 	const quantity = products.reduce((total, product)=> total + product.quantity, 0)
 
 	const handleShowCart = () => {
-		dispatch({
-			type: "cart"
-		})
+		dispatch(userProgressActions.cart())
 	}
 
 	return (

@@ -1,3 +1,6 @@
+// This reducer is not used in the implementation of this branch since we have made use of redux toolkit
+// Keeping this for reference.
+
 const Reducer = (state = { products: [] }, action) => {
 	const updatedProducts = [...state.products];
 

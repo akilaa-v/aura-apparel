@@ -6,6 +6,8 @@ import useHttp from "../hooks/useHttp";
 import Error from "../UI/Error";
 import ConfettiContainer from "../UI/Confetti";
 import { useDispatch, useSelector } from "react-redux";
+import { userProgressActions } from "../../store/UserProgressSlice";
+import { cartActions } from "../../store/CartSlice";
 
 const requestConfig = {
 	headers: {
@@ -15,8 +17,8 @@ const requestConfig = {
 };
 
 const Checkout = () => {
-	const products = useSelector((state) => state.products);
-	const userProgress = useSelector((state) => state.userProgress);
+	const products = useSelector((state) => state.cart.products);
+	const userProgress = useSelector((state) => state.userProgress.userProgress);
 	const dispatch = useDispatch();
 
 	const {
@@ -32,9 +34,7 @@ const Checkout = () => {
 		0
 	);
 	const handleCloseCheckout = () => {
-		dispatch({
-			type: "hide",
-		});
+		dispatch(userProgressActions.hide());
 	};
 
 	const handleSubmit = (event) => {
@@ -56,12 +56,8 @@ const Checkout = () => {
 	};
 
 	const handleFinish = () => {
-		dispatch({
-			type: "hide",
-		});
-		dispatch({
-			type: "CLEAR_CART",
-		});
+		dispatch(userProgressActions.hide());
+		dispatch(cartActions.clearProducts());
 		clearData();
 	};
 
@@ -71,7 +67,6 @@ const Checkout = () => {
 		actions = <Button disabled={true}>Sending data...</Button>;
 	}
 
-	console.log(data, error);
 	if (
 		data !== null &&
 		typeof data === "object" &&

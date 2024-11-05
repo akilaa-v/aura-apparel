@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import "./Product.css";
 import Button from "../UI/Button";
 import { useDispatch, useSelector } from "react-redux";
+import { cartActions } from "../../store/CartSlice";
 
 const Product = ({ product }) => {
 	const { id, name, price, img } = product;
 	const [show, setShow] = useState(false);
 	const [quantity, setQuantity] = useState(0);
-	const products = useSelector(state => state.products);
+	const products = useSelector(state => state.cart.products);
 	const dispatch = useDispatch();
 	let updatedQuantity = 0;
 
@@ -27,17 +28,11 @@ const Product = ({ product }) => {
 	}, [products]); // re-run effect when products or index changes
 
 	const addProductToCart = () => {
-		dispatch({
-			type: "ADD_PRDCT",
-			product,
-		});
+		dispatch(cartActions.addProduct(product));
 	};
 
 	const removeProductFromCart = () => {
-		dispatch({
-			type: "REMOVE_PRDCT",
-			id,
-		});
+		dispatch(cartActions.removeProduct(id));
 	};
 
 	return (

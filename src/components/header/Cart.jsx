@@ -4,40 +4,34 @@ import Modal from "../UI/Modal";
 import Button from "../UI/Button";
 import emptyCart from "../../assets/empty-cart.png";
 import { useDispatch, useSelector } from "react-redux";
+import { userProgressActions } from "../../store/UserProgressSlice";
+import { cartActions } from "../../store/CartSlice";
 
 const Cart = () => {
-	const products = useSelector((state) => state.products);
-	const userProgress = useSelector((state)=> state.userProgress)
+	const products = useSelector((state) => state.cart.products);
+	const userProgress = useSelector((state)=> state.userProgress.userProgress)
 	const dispatch = useDispatch();
 	const totalPrice = products.reduce(
 		(price, product) => price + product.quantity * product.price,
 		0
 	);
 
+	console.log("printing products",products);
+
 	const handleCloseCart = () => {
-		dispatch({
-			type: "hide"
-		});
+		dispatch(userProgressActions.hide());
 	};
 
 	const handleShowCheckout = () => {
-		dispatch({
-			type: "checkout"
-		});
+		dispatch(userProgressActions.checkout());
 	};
 
 	const addProductToCart = (product) => {
-		dispatch({
-			type: "ADD_PRDCT",
-			product,
-		});
+		dispatch(cartActions.addProduct(product));
 	};
 
 	const removeProductFromCart = (id) => {
-		dispatch({
-			type: "REMOVE_PRDCT",
-			id,
-		});
+		dispatch(cartActions.removeProduct(id));
 	};
 
 	return (
