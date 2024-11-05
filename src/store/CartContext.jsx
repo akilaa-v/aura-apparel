@@ -1,5 +1,5 @@
 import { createContext, useReducer } from "react";
-import CartReducer from "./CartReducer";
+import CartReducer from "./Reducer";
 
 const CartContext = createContext({
 	products: [],
@@ -7,6 +7,9 @@ const CartContext = createContext({
 	removeProduct: (id) => {},
 	clearCart : () => {}
 });
+
+// This context is not used in the app right now since we are making use of redux.
+// keeping this file for reference.
 
 export const CartContextProvider = ({ children }) => {
 	const [cart, dispatch] = useReducer(CartReducer, { products: [] });

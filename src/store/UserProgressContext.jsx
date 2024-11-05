@@ -7,6 +7,9 @@ const UserProgressContext = createContext({
 	showCheckout: () => {},
 });
 
+// Implemented all of this using redux. So this file is not being used right now. 
+// Keeping this file for reference.
+
 export const UserProgressContextProvider = ({ children }) => {
 	const [userProgress, setUserProgress] = useState("");
 

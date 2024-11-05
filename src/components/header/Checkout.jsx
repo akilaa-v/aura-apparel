@@ -1,13 +1,11 @@
-import { createContext, useContext } from "react";
 import Input from "../UI/Input";
 import Modal from "../UI/Modal";
 import "./Checkout.css";
-import UserProgressContext from "../../store/UserProgressContext";
 import Button from "../UI/Button";
-import CartContext from "../../store/CartContext";
 import useHttp from "../hooks/useHttp";
 import Error from "../UI/Error";
 import ConfettiContainer from "../UI/Confetti";
+import { useDispatch, useSelector } from "react-redux";
 
 const requestConfig = {
 	headers: {
@@ -17,23 +15,26 @@ const requestConfig = {
 };
 
 const Checkout = () => {
-	const userProgressCtx = useContext(UserProgressContext);
-	const cartCtx = useContext(CartContext);
+	const products = useSelector((state) => state.products);
+	const userProgress = useSelector((state) => state.userProgress);
+	const dispatch = useDispatch();
 
 	const {
 		data,
 		error,
 		loading: isSending,
 		sendRequest,
-		clearData
+		clearData,
 	} = useHttp("http://localhost:3000/orders", requestConfig, []);
 
-	const totalPrice = cartCtx.products.reduce(
+	const totalPrice = products.reduce(
 		(price, product) => price + product.quantity * product.price,
 		0
 	);
-	const handleCloseCart = () => {
-		userProgressCtx.hide();
+	const handleCloseCheckout = () => {
+		dispatch({
+			type: "hide",
+		});
 	};
 
 	const handleSubmit = (event) => {
@@ -47,7 +48,7 @@ const Checkout = () => {
 		sendRequest(
 			JSON.stringify({
 				order: {
-					items: cartCtx.products,
+					items: products,
 					customer: customerData,
 				},
 			})
@@ -55,8 +56,12 @@ const Checkout = () => {
 	};
 
 	const handleFinish = () => {
-		userProgressCtx.hide();
-		cartCtx.clearCart();
+		dispatch({
+			type: "hide",
+		});
+		dispatch({
+			type: "CLEAR_CART",
+		});
 		clearData();
 	};
 
@@ -74,21 +79,17 @@ const Checkout = () => {
 		!error
 	) {
 		return (
-			<Modal
-				open={userProgressCtx.userProgress === "checkout"}
-				onClose={handleFinish}
-			>
+			<Modal open={userProgress === "checkout"} onClose={handleFinish}>
 				<ConfettiContainer />
-				<Button onClick={handleFinish} classes="success-btn">Close</Button>
+				<Button onClick={handleFinish} classes="success-btn">
+					Close
+				</Button>
 			</Modal>
 		);
 	}
 
 	return (
-		<Modal
-			open={userProgressCtx.userProgress === "checkout"}
-			onClose={handleCloseCart}
-		>
+		<Modal open={userProgress === "checkout"} onClose={handleCloseCheckout}>
 			<div className="checkout-title">
 				<h2>Checkout</h2>
 				<h3> Total Price : &#8377;{totalPrice}</h3>
@@ -108,7 +109,7 @@ const Checkout = () => {
 				></Input>
 				{!error ? (
 					<div className="checkout-btn-container">
-						<Button onClick={handleCloseCart}>Close</Button>
+						<Button onClick={handleCloseCheckout}>Close</Button>
 						{actions}
 					</div>
 				) : (

@@ -1,50 +1,59 @@
 import "./Cart.css";
 
 import Modal from "../UI/Modal";
-import { useContext } from "react";
-import CartContext from "../../store/CartContext";
-import UserProgressContext from "../../store/UserProgressContext";
 import Button from "../UI/Button";
 import emptyCart from "../../assets/empty-cart.png";
+import { useDispatch, useSelector } from "react-redux";
 
 const Cart = () => {
-	const cartCtx = useContext(CartContext);
-	const userProgressCtx = useContext(UserProgressContext);
-	const totalPrice = cartCtx.products.reduce(
+	const products = useSelector((state) => state.products);
+	const userProgress = useSelector((state)=> state.userProgress)
+	const dispatch = useDispatch();
+	const totalPrice = products.reduce(
 		(price, product) => price + product.quantity * product.price,
 		0
 	);
 
 	const handleCloseCart = () => {
-		userProgressCtx.hide();
+		dispatch({
+			type: "hide"
+		});
 	};
 
 	const handleShowCheckout = () => {
-		userProgressCtx.showCheckout();
+		dispatch({
+			type: "checkout"
+		});
 	};
 
 	const addProductToCart = (product) => {
-		cartCtx.addProduct(product);
+		dispatch({
+			type: "ADD_PRDCT",
+			product,
+		});
 	};
 
 	const removeProductFromCart = (id) => {
-		cartCtx.removeProduct(id);
+		dispatch({
+			type: "REMOVE_PRDCT",
+			id,
+		});
 	};
 
 	return (
 		<Modal
-			open={userProgressCtx.userProgress === "cart"}
-			onClose={userProgressCtx.userProgress === "cart" ? handleCloseCart : null}
+			open={userProgress === "cart"}
+			onClose={userProgress === "cart" ? handleCloseCart : null}
 		>
 			<h3 className="cart-title">Your cart details</h3>
 			<ul className="cart-items">
 				{totalPrice === 0 && (
 					<div className="empty-cart">
-						<img src={emptyCart} alt=""/>
+						<img src={emptyCart} alt="" />
 						<p>Your cart is empty!</p>
 					</div>
 				)}
-				{cartCtx.products.map((product) => (
+				{products.map((product) => (
 					<li key={product.id} className="cart-item">
 						<img
 							className="cart-prdct-img"
@@ -79,7 +88,7 @@ const Cart = () => {
 				<h4>Total Price : &#8377;{totalPrice}</h4>
 				<div className="action-in-cart">
 					<Button onClick={handleCloseCart}>Close</Button>
-					{cartCtx.products.length > 0 && (
+					{products.length > 0 && (
 						<Button onClick={handleShowCheckout}>Checkout</Button>
 					)}
 				</div>

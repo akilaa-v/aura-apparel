@@ -1,5 +1,4 @@
-const CartReducer = (state, action) => {
-	
+const Reducer = (state = { products: [] }, action) => {
 	const updatedProducts = [...state.products];
 
 	switch (action.type) {
@@ -38,10 +37,19 @@ const CartReducer = (state, action) => {
 		case "CLEAR_CART": {
 			return { ...state, products: [] };
 		}
+		case "cart": {
+			return {...state, userProgress: "cart"}
+		}
+		case "checkout": {
+			return {...state, userProgress: "checkout"}
+		}
+		case "hide": {
+			return {...state, userProgress: "hide"}
+		}
 		default: {
 			return state;
 		}
 	}
 };
 
-export default CartReducer;
+export default Reducer;
