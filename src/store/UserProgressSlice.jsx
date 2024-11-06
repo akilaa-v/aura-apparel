@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import Checkout from "../components/header/Checkout";
 
 const userprogressSlice = createSlice({
 	name: "userProgress",
