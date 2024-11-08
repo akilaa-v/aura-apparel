@@ -16,8 +16,6 @@ const Cart = () => {
 		0
 	);
 
-	console.log("printing products",products);
-
 	const handleCloseCart = () => {
 		dispatch(userProgressActions.hide());
 	};
