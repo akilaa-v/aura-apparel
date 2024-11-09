@@ -1,12 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
-import Footer from "./components/footer/Footer";
-import Cart from "./components/header/Cart";
-import Checkout from "./components/header/Checkout";
-import Header from "./components/header/Header";
-import ProductList from "./components/products/ProductList";
 import { useEffect } from "react";
 import sendCartData, { fetchCartData } from "./store/CartActions";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes/Router";
 
 let initialLoad = true;
 
@@ -27,15 +24,7 @@ function App() {
 		}
 	}, [cart, dispatch]);
 
-	return (
-		<>
-			<Header />
-			<ProductList />
-			<Footer />
-			<Cart />
-			<Checkout />
-		</>
-	);
+	return <RouterProvider router={router} />;
 }
 
 export default App;

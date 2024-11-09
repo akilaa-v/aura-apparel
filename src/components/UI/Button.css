@@ -6,11 +6,12 @@
     border: none;
     padding: 4px 10px;
     font-size: 14px;
-    font-family: "Quicksand", sans-serif;
+    font-family: inherit;
     height: 32px;
 }
 
-.action-btn:hover {
+.action-btn:hover,
+.action-btn:active {
     color: black;
     border: 1px solid #d3d3d3;
     box-shadow: 0 0 5pt 0.5pt #D3D3D3;
@@ -25,3 +26,4 @@ button:disabled {
     cursor: not-allowed;    /* Show "not-allowed" cursor */
     opacity: 0.6;           /* Reduce opacity */
   }
+

@@ -3,48 +3,104 @@
 		"id": "p1",
 		"name": "Flared pants",
 		"price": "899",
-		"img": "images/product1.png"
+		"images": [
+			"images/product1/image-1.png",
+			"images/product1/image-2.png",
+			"images/product1/image-3.png"
+		],
+		"sizes": ["S", "M", "L", "XL"],
+		"tagline": "Flared pants with a high waist and dramatic leg shape, offering a flattering and trendy silhouette.",
+		"description": "Add a touch of retro style to your wardrobe with these flared pants. Featuring a flattering high waist and a dramatic flared leg, these pants create an elongated silhouette, perfect for both casual and chic looks. Made from comfortable, stretchy fabric for all-day wear."
 	},
 	{
 		"id": "p2",
 		"name": "Blouson top",
 		"price": "399",
-		"img": "images/product2.png"
+		"images": [
+			"images/product2/image-1.png",
+			"images/product2/image-2.png",
+			"images/product2/image-3.png"
+		],
+		"sizes": ["S", "M", "L", "XL"],
+		"tagline": "A stylish blouson top with a relaxed fit and gathered waist, offering a flattering and feminine silhouette.",
+		"description": "Effortlessly stylish, this blouson top features a relaxed fit with a gathered waist and billowy sleeves for a flattering, feminine silhouette. Perfect for pairing with jeans or skirts, this versatile top adds a touch of elegance to any outfit."
 	},
 	{
 		"id": "p3",
 		"name": "Cotton pants",
 		"price": "699",
-		"img": "images/product3.png"
+		"images": [
+			"images/product3/image-1.png",
+			"images/product3/image-2.png",
+			"images/product3/image-3.png"
+		],
+		"sizes": ["S", "M", "L", "XL"],
+		"tagline": "Comfortable and breathable cotton pants, perfect for all-day wear with a relaxed fit and versatile style.",
+		"description": "Stay comfortable and chic with these cotton trousers, crafted from breathable fabric for all-day ease. With a tailored fit and versatile design, they're perfect for both casual and polished looks. Pair with your favorite tops for effortless style."
 	},
 	{
 		"id": "p4",
 		"name": "Sleeveless kurti",
 		"price": "299",
-		"img": "images/product4.png"
+		"images": [
+			"images/product4/image-1.png",
+			"images/product4/image-2.png",
+			"images/product4/image-3.png"
+		],
+		"sizes": ["S", "M", "L", "XL"],
+		"tagline": "A breezy sleeveless kurti, offering a comfortable and stylish fit, perfect for casual or festive occasions.",
+		"description": "Embrace effortless elegance with this sleeveless kurti, designed for warm days and a modern look. Featuring a comfortable, relaxed fit and crafted from lightweight fabric, it's perfect for both casual outings and festive occasions. Pair it with leggings or palazzos for a stylish, versatile ensemble."
 	},
 	{
 		"id": "p5",
 		"name": "Cotton shirt",
 		"price": "799",
-		"img": "images/product5.png"
+		"images": [
+			"images/product5/image-1.png",
+			"images/product5/image-2.png",
+			"images/product5/image-3.png"
+		],
+		"sizes": ["S", "M", "L", "XL"],
+		"tagline": "A soft and breathable cotton shirt, designed for comfort and everyday style with a classic, versatile fit.",
+		"description": "Stay classic and comfortable with this cotton plaid shirt. Made from soft, breathable fabric, it features a timeless plaid pattern and a relaxed fit, perfect for layering or wearing on its own. Ideal for casual days or a laid-back weekend look."
 	},
 	{
 		"id": "p6",
 		"name": "Flared kurta",
 		"price": "1299",
-		"img": "images/product6.png"
+		"images": [
+			"images/product6/image-1.png",
+			"images/product6/image-2.png",
+			"images/product6/image-3.png"
+		],
+		"sizes": ["S", "M", "L", "XL"],
+		"tagline": "An elegant flared kurta with a graceful A-line silhouette, offering a perfect blend of comfort and style.",
+		"description": "Add a touch of elegance to your wardrobe with this flared kurta. Featuring a graceful A-line silhouette, it combines comfort and style effortlessly. Crafted from soft, breathable fabric, this versatile piece is perfect for casual outings or festive occasions, offering both comfort and charm."
 	},
 	{
 		"id": "p7",
 		"name": "Accordian skirt",
 		"price": "799",
-		"img": "images/product7.png"
+		"images": [
+			"images/product7/image-1.png",
+			"images/product7/image-2.png",
+			"images/product7/image-3.png"
+		],
+		"sizes": ["S", "M", "L", "XL"],
+		"tagline": "A chic accordion skirt with pleats that add movement and texture, perfect for both casual and dressy occasions.",
+		"description": "Make a statement with this accordion skirt, featuring pleats that add texture and movement to your look. Crafted from lightweight, flowy fabric, this skirt offers a flattering silhouette and is perfect for both casual and dressy occasions. Pair with a tucked-in blouse or top for a chic, modern style."
 	},
 	{
 		"id": "p8",
 		"name": "Denim shorts",
 		"price": "1299",
-		"img": "images/product8.png"
+		"images": [
+			"images/product8/image-1.png",
+			"images/product8/image-2.png",
+			"images/product8/image-3.png"
+		],
+		"sizes": ["S", "M", "L", "XL"],
+		"tagline": "Classic denim shorts with a relaxed fit, offering comfort and style for casual, warm-weather days.",
+		"description": "Stay cool and stylish with these denim shorts, featuring a classic fit and durable fabric for everyday comfort. With a versatile design, they're perfect for casual outings, beach days, or summer adventures. Pair with a t-shirt or tank top for an effortlessly laid-back look."
 	}
 ]

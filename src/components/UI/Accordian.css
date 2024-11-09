@@ -1,0 +1,37 @@
+.accordion {
+    width: 100%;
+    
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .accordion-item {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .accordion-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #f7f7f7;
+  }
+  
+  .caret {
+    margin-right: 10px; /* Space between the caret and the title */
+    font-size: 18px; /* Adjust the caret size */
+  }
+  
+  .accordion-content {
+    padding: 15px;
+    background-color: #fff;
+    display: block;
+  }
+  
+  .accordion-title:hover {
+    background-color: #e7e7e7;
+  }
+  

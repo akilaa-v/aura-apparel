@@ -6,7 +6,9 @@ const cartSlice = createSlice({
 	reducers: {
 		addProduct: (state, action) => {
 			const existingProductIndex = state.products.findIndex(
-				(product) => product.id === action.payload.id
+				(product) =>
+					product.id === action.payload.id &&
+					product.size === action.payload.size
 			);
 			if (existingProductIndex > -1) {
 				state.products[existingProductIndex].quantity++;
@@ -19,7 +21,6 @@ const cartSlice = createSlice({
 			const existingProductIndex = state.products.findIndex(
 				(product) => product.id === action.payload
 			);
-			console.log(existingProductIndex)
 
 			if (state.products[existingProductIndex].quantity > 1) {
 				state.products[existingProductIndex].quantity--;
@@ -36,7 +37,6 @@ const cartSlice = createSlice({
 		},
 	},
 });
-
 
 export const cartActions = cartSlice.actions;
 export default cartSlice;

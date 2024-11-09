@@ -1,0 +1,37 @@
+.prdct-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.prdct-details {
+    display: flex;
+}
+
+.size {
+    margin-right: 6px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: rgb(114, 112, 112);
+    font-size: 12px;
+}
+
+.size:hover,
+.size:focus {
+    box-shadow: none;
+    border: none
+}
+
+.back-btn {
+   text-decoration: none;
+   color: #000;    
+}
+.back-btn:hover {
+    color: #a5a4a4
+}
+
+.size-error {
+    color: #ff0000;
+}
+.accordian-container {
+    flex-direction: column;
+}

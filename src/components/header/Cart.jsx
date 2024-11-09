@@ -49,11 +49,12 @@ const Cart = () => {
 					<li key={product.id} className="cart-item">
 						<img
 							className="cart-prdct-img"
-							src={`http://localhost:3000/${product.img}`}
+							src={`http://localhost:3000/${product.image}`}
 							alt=""
 						/>
 						<div>{product.name}</div>
 						<span>&#8377;{product.price} </span>
+						<span>{product.size}</span>
 						<p className="action-btn-container">
 							<Button
 								onClick={() => {
