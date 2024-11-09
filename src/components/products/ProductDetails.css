@@ -1,18 +1,28 @@
-.prdct-container {
-    display: flex;
-    flex-direction: column;
-}
-
 .prdct-details {
     display: flex;
+    gap: 30px;
 }
+
+.details {
+    padding-right: 30px
+}
+
+.size-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+}
+
 
 .size {
     margin-right: 6px;
     padding: 4px 8px;
     border-radius: 4px;
-    background-color: rgb(114, 112, 112);
+    background-color: rgb(186, 185, 185);
     font-size: 12px;
+    float: none;
 }
 
 .size:hover,
@@ -22,16 +32,21 @@
 }
 
 .back-btn {
-   text-decoration: none;
-   color: #000;    
+    text-decoration: none;
+    color: #000;
 }
+
 .back-btn:hover {
     color: #a5a4a4
 }
 
 .size-error {
     color: #ff0000;
+    text-align: center;
+    font-size: 14px;
+    padding-right: 30px;
 }
+
 .accordian-container {
     flex-direction: column;
 }

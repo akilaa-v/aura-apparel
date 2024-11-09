@@ -51,27 +51,33 @@ const ProductDetails = () => {
 						<div className="product-title">{name}</div>
 						<div>{description}</div>
 						<div className="product-price">&#8377; {price}</div>
-						{sizeError && <span className="size-error">Please select a size</span>}
-						{[...sizes].reverse().map((size) => (
-							<Button
-								classes="size"
-								key={size}
-								onClick={() => {
-									handleSizeSelect(size);
-								}}
-							>
-								{size}
-							</Button>
-						))}
-						<div className="add-to-cart-btn">
-							{" "}
-							<Button onClick={addProductToCart}>Add to Cart</Button>
+						{sizeError && (
+							<div className="size-error">Please select a size</div>
+						)}
+						<div className="size-container">
+							<div>
+								{[...sizes].map((size) => (
+									<Button
+										classes="size"
+										key={size}
+										onClick={() => {
+											handleSizeSelect(size);
+										}}
+									>
+										{size}
+									</Button>
+								))}
+							</div>
+							<div className="add-to-cart-btn">
+								{" "}
+								<Button onClick={addProductToCart}>Add to Cart</Button>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div className="accordian-container">
-				<Accordion items={items}/>
+				<Accordion items={items} />
 			</div>
 		</div>
 	);
