@@ -1,11 +1,12 @@
+import { forwardRef } from "react";
 import "./Button.css";
 
-const Button = ({ children, onClick, classes = "", disabled = false }) => {
+const Button = forwardRef(({ children, onClick, classes = "", disabled = false }, ref) => {
 	return (
-		<button className={`action-btn ${classes}`} onClick={onClick} disabled={disabled}>
+		<button ref={ref} className={`action-btn ${classes}`} onClick={onClick} disabled={disabled}>
 			{children}
 		</button>
 	);
-};
+});
 
 export default Button;

@@ -8,6 +8,9 @@ const RootLayout = () => {
 	return (
 		<>
 			<Header />
+			{/* Outlet is given to tell react where the children in the RootLayout.jsx has to be displayed 
+			The Header and Footer are displayed in all children pages.
+			*/}
             <Outlet/>
 			<Footer />
 			<Cart />

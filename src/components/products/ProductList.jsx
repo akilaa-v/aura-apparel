@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Product from "./Product";
 import "./ProductList.css";
 import useHttp from "../hooks/useHttp";
@@ -7,7 +6,7 @@ import Error from "../UI/Error";
 const config = {};
 const ProductList = () => {
 	const { data: fetchedProducts, loading, error } = useHttp(
-		"http://localhost:3000/products",
+		"https://aura-apparel-default-rtdb.europe-west1.firebasedatabase.app/products.json",
 		config,
 		[]
 	);

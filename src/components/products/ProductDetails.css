@@ -15,7 +15,6 @@
     margin-top: 16px;
 }
 
-
 .size {
     margin-right: 6px;
     padding: 4px 8px;
@@ -26,10 +25,15 @@
 }
 
 .size:hover,
-.size:focus {
+.size:focus,
+.active-class {
     box-shadow: none;
-    border: none
+    border: none;
+    background-color: #000;
+    color: #fff;
 }
+
+
 
 .back-btn {
     text-decoration: none;

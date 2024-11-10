@@ -27,7 +27,7 @@ const Checkout = () => {
 		loading: isSending,
 		sendRequest,
 		clearData,
-	} = useHttp("http://localhost:3000/orders", requestConfig, []);
+	} = useHttp("https://aura-apparel-default-rtdb.europe-west1.firebasedatabase.app/order.json", requestConfig, []);
 
 	const totalPrice = products.reduce(
 		(price, product) => price + product.quantity * product.price,
@@ -45,6 +45,7 @@ const Checkout = () => {
 		// This gets all the key/value pairs from the formdata based on the name(entries) of the input field.
 		const customerData = Object.fromEntries(formData.entries());
 
+		// Sending this order data to the backend (firebase in our case) to store the data.
 		sendRequest(
 			JSON.stringify({
 				order: {
@@ -55,9 +56,12 @@ const Checkout = () => {
 		);
 	};
 
+	// After the order is placed successfully the close button in the modal closes the cart
+	// also clears the cart.
 	const handleFinish = () => {
 		dispatch(userProgressActions.hide());
 		dispatch(cartActions.clearProducts());
+		// clearing this data in useHttp hook because the next time we get the data it is the same old data.
 		clearData();
 	};
 

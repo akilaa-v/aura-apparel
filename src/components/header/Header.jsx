@@ -6,6 +6,7 @@ import Button from "../UI/Button";
 import Input from "../UI/Input";
 import { useDispatch, useSelector } from "react-redux";
 import { userProgressActions } from "../../store/UserProgressSlice";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 	const products = useSelector(state => state.cart.products);
@@ -19,7 +20,7 @@ const Header = () => {
 
 	return (
 		<header className="header-container">
-			<img src={logo} alt="website logo" className="website-logo" />
+			<Link to="/"><img src={logo} alt="website logo" className="website-logo" /></Link>
 			<form className=".search-form">
             <Input type="text" id="search-bar" placeholder="Search for products"></Input>
         </form>

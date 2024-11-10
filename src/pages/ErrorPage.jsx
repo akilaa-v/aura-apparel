@@ -7,7 +7,9 @@ const ErrorPage = () => {
     <div className="error-page">
       <h1>Oops!</h1>
       <p>Something went wrong. Please try again later.</p>
-      <Link to="/">Home</Link>
+      {/* This <Link/> element checks for the given to="" values and checks the router automatically
+      and takes us to the page. Works only when given inside a component that is present in createBrowserRouter config */}
+      <Link to="/">Go back to Home</Link>
     </div>
   );
 };

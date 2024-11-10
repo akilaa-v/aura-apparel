@@ -22,6 +22,7 @@ const ProductDetails = () => {
 	};
 
 	const addProductToCart = () => {
+		// when size is already selected then add to cart.
 		if (selectedSize) {
 			dispatch(
 				cartActions.addProduct({
@@ -34,11 +35,16 @@ const ProductDetails = () => {
 			);
 			setSelectedSize("");
 		} else {
+			// else set error flag to true which will inturn enable the error message to be
+			// displayed (check the jsx)
 			setSizeError(true);
 		}
 	};
 	return (
 		<div className="prdct-container">
+			{/* This NavLink is different from Link in a way that the className takes a function that automatically
+			passes the isActive as argument which tells us if the link is active right now or not. we can use that
+			to set the css classes  */}
 			<NavLink to="/" className={(isActive) => (isActive ? "" : "back-btn")}>
 				Back
 			</NavLink>
@@ -58,7 +64,7 @@ const ProductDetails = () => {
 							<div>
 								{[...sizes].map((size) => (
 									<Button
-										classes="size"
+										classes={`size ${selectedSize === size ? "active-class" : ""}`}
 										key={size}
 										onClick={() => {
 											handleSizeSelect(size);
