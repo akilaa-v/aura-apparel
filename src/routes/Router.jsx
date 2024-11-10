@@ -11,11 +11,11 @@ const router = createBrowserRouter([
 		path: "/",
 		element: <RootLayout />,
 		// Displays when the path is not found or when generic errors need to be handled.
-		errorElement: <ErrorPage/>,
-		// These children routes come under "/" path. Like this many other routes can have children. 
+		errorElement: <ErrorPage />,
+		// These children routes come under "/" path. Like this many other routes can have children.
 		// eg: "/admin", "/admin/user" (this is the child of "/admin")
 		children: [
-			{ path: "/", element: <ProductList /> },
+			{ index: true, element: <ProductList /> },
 			{ path: "/product-details", element: <ProductDetails /> },
 		],
 	},

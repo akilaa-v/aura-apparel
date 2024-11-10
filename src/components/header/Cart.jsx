@@ -49,7 +49,7 @@ const Cart = () => {
 					<li key={product.id} className="cart-item">
 						<img
 							className="cart-prdct-img"
-							src={`http://localhost:3000/${product.image}`}
+							src={product.image}
 							alt=""
 						/>
 						<div>{product.name}</div>
