@@ -2,6 +2,7 @@
 	{
 		"id": "p1",
 		"name": "Flared pants",
+		"title":"Women's Light-Wash High-Rise Flared Jeans",
 		"price": "899",
 		"images": [
 			"images/product1/image-1.png",
@@ -15,6 +16,7 @@
 	{
 		"id": "p2",
 		"name": "Blouson top",
+		"title": "Pure Cotton Blouson Sleeve Relaxed Blouse",
 		"price": "399",
 		"images": [
 			"images/product2/image-1.png",
@@ -28,6 +30,7 @@
 	{
 		"id": "p3",
 		"name": "Cotton pants",
+		"title":"Women's Pure Cotton Trousers",
 		"price": "699",
 		"images": [
 			"images/product3/image-1.png",
@@ -40,7 +43,8 @@
 	},
 	{
 		"id": "p4",
-		"name": "Sleeveless kurti",
+		"name": "Sleeveless kurta",
+		"title": "Ethnic Motifs Printed Mandarin Collar Sleeveless A-Line Kurta",
 		"price": "299",
 		"images": [
 			"images/product4/image-1.png",
@@ -48,12 +52,13 @@
 			"images/product4/image-3.png"
 		],
 		"sizes": ["S", "M", "L", "XL"],
-		"tagline": "A breezy sleeveless kurti, offering a comfortable and stylish fit, perfect for casual or festive occasions.",
+		"tagline": "A breezy sleeveless kurta, offering a comfortable and stylish fit, perfect for casual or festive occasions.",
 		"description": "Embrace effortless elegance with this sleeveless kurti, designed for warm days and a modern look. Featuring a comfortable, relaxed fit and crafted from lightweight fabric, it's perfect for both casual outings and festive occasions. Pair it with leggings or palazzos for a stylish, versatile ensemble."
 	},
 	{
 		"id": "p5",
 		"name": "Cotton shirt",
+		"title": "Women's Regular Fit Checked Casual Shirt",
 		"price": "799",
 		"images": [
 			"images/product5/image-1.png",
@@ -67,6 +72,7 @@
 	{
 		"id": "p6",
 		"name": "Flared kurta",
+		"title": "Women's Indie Prints Georgette Anarkali Kurta",
 		"price": "1299",
 		"images": [
 			"images/product6/image-1.png",
@@ -80,6 +86,7 @@
 	{
 		"id": "p7",
 		"name": "Accordian skirt",
+		"title": "Accordion Pleats Maxi Flared Skirt",
 		"price": "799",
 		"images": [
 			"images/product7/image-1.png",
@@ -93,6 +100,7 @@
 	{
 		"id": "p8",
 		"name": "Denim shorts",
+		"title": "Women Pure Cotton High-Rise Denim Shorts",
 		"price": "1299",
 		"images": [
 			"images/product8/image-1.png",

@@ -5,6 +5,8 @@ const Product = ({ product }) => {
 	const { id, name, price, images, tagline } = product;
 	const navigate = useNavigate();
 
+console.log(product)
+
 	const handleClick = () => {
 		navigate("/product-details", { state: product });
 	};

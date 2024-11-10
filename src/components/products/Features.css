@@ -1,0 +1,21 @@
+.features-container ul {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+}
+
+.features-container img {
+    width: 18px;
+    height: 18px;
+}
+
+.features-container li {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

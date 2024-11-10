@@ -27,7 +27,12 @@ const Checkout = () => {
 		loading: isSending,
 		sendRequest,
 		clearData,
-	} = useHttp("https://aura-apparel-default-rtdb.europe-west1.firebasedatabase.app/order.json", requestConfig, []);
+	} = useHttp(
+		"https://aura-apparel-default-rtdb.europe-west1.firebasedatabase.app/order.json",
+		requestConfig,
+		[]
+	);
+
 
 	const totalPrice = products.reduce(
 		(price, product) => price + product.quantity * product.price,
@@ -43,15 +48,15 @@ const Checkout = () => {
 		// This creates an object of the FormData which has the key value pairs of the form(event.target).
 		const formData = new FormData(event.target);
 		// This gets all the key/value pairs from the formdata based on the name(entries) of the input field.
+		// Object.fromEntries converts array of key value pairs to an object
 		const customerData = Object.fromEntries(formData.entries());
 
 		// Sending this order data to the backend (firebase in our case) to store the data.
 		sendRequest(
 			JSON.stringify({
-				order: {
-					items: products,
-					customer: customerData,
-				},
+				items: products,
+				customer: customerData,
+				date: new Date().toISOString(),
 			})
 		);
 	};
