@@ -15,6 +15,7 @@ const router = createBrowserRouter([
 		// These children routes come under "/" path. Like this many other routes can have children.
 		// eg: "/admin", "/admin/user" (this is the child of "/admin")
 		children: [
+			// index true mean when the path is "" this element has to be shown
 			{ index: true, element: <ProductList /> },
 			{ path: "/product-details", element: <ProductDetails /> },
 		],

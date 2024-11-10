@@ -11,7 +11,7 @@ const sendHttpRequest = async (url, config) => {
 	return resData;
 };
 
-// This is a custom hook for sending data to the backend.
+// This is a custom hook for fetching/sending data to the http urls.
 const useHttp = (url, config, initialData) => {
 	const [data, setData] = useState(initialData);
 	const [error, setError] = useState();
