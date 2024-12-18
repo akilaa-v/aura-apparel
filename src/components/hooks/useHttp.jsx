@@ -4,28 +4,31 @@ const sendHttpRequest = async (url, config) => {
 	const response = await fetch(url, config);
 	const resData = await response.json();
 
-	if (!response.ok) {
-		throw new Error(resData.message || "Something went wrong!");
-	}
-
-	return resData;
+	return { response, resData }; // Return both the response and data
 };
 
 // This is a custom hook for fetching/sending data to the http urls.
 const useHttp = (url, config, initialData) => {
 	const [data, setData] = useState(initialData);
-	const [error, setError] = useState();
+	const [error, setError] = useState(null);
 	const [loading, setLoading] = useState(false);
 
 	const sendRequest = useCallback(
-		async (data) => {
+		async (requestBody, throwOnError= true) => {
 			setLoading(true);
+			setError(null)
 			try {
-				const resData = await sendHttpRequest(url, {
+				const {response, resData } = await sendHttpRequest(url, {
 					...config,
-					body: data,
+					body: requestBody,
 				});
+
+				if (!response.ok && throwOnError) {
+					throw new Error(resData.message || "Something went wrong!");
+				  }
+
 				setData(resData);
+
 			} catch (error) {
 				setError(error.message || "Error occurred!");
 			}
@@ -33,11 +36,10 @@ const useHttp = (url, config, initialData) => {
 		},
 		[url, config]
 	);
-
-	const clearData = () => {
-		setData(initialData);
-	}
-
+	const clearData = useCallback(() => {
+		setData(null);
+		setError(null);
+	}, []);
 	useEffect(() => {
 		if ((config && (!config.method || config.method === "GET")) || !config) {
 			sendRequest();
@@ -49,7 +51,7 @@ const useHttp = (url, config, initialData) => {
 		error,
 		loading,
 		sendRequest,
-		clearData
+		clearData,
 	};
 };
 

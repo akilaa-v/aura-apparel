@@ -9,21 +9,30 @@ import { userProgressActions } from "../../store/UserProgressSlice";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-	const products = useSelector(state => state.cart.products);
+	const products = useSelector((state) => state.cart.products);
 	const dispatch = useDispatch();
 	// const userProgressCtx = useContext(UserProgressContext);
-	const quantity = products.reduce((total, product)=> total + product.quantity, 0)
+	const quantity = products.reduce(
+		(total, product) => total + product.quantity,
+		0
+	);
 
 	const handleShowCart = () => {
-		dispatch(userProgressActions.cart())
-	}
+		dispatch(userProgressActions.cart());
+	};
 
 	return (
 		<header className="header-container">
-			<Link to="/"><img src={logo} alt="website logo" className="website-logo" /></Link>
+			<Link to="/">
+				<img src={logo} alt="website logo" className="website-logo" />
+			</Link>
 			<form className=".search-form">
-            <Input type="text" id="search-bar" placeholder="Search for products"></Input>
-        </form>
+				<Input
+					type="text"
+					id="search-bar"
+					placeholder="Search for products"
+				></Input>
+			</form>
 			<User />
 			<div className="cart-container">
 				<button className="cart-btn" onClick={handleShowCart}>
@@ -31,7 +40,9 @@ const Header = () => {
 					<span>({quantity})</span>
 				</button>
 				{/* <button className="sign-out-btn">Sign out</button> */}
-				<Button>Sign out</Button>
+				<Link to="/auth?mode=login">
+					<Button>Sign out</Button>
+				</Link>
 			</div>
 		</header>
 	);
