@@ -28,7 +28,7 @@ function App() {
 		}
 	}, [cart, dispatch]);
 
-	return <RouterProvider router={router}/>;
+	return <RouterProvider router={router} basename="/aura-apparel"/>;
 }
 
 export default App;

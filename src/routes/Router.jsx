@@ -26,6 +26,9 @@ const router = createBrowserRouter([
 			{ path: "/auth", element: <AuthForm/>}
 		],
 	},
+	{
+		basename: "/aura-apparel",  // Set the base path for your subdirectory
+	}
 ]);
 
 export default router;
