@@ -48,7 +48,7 @@ const ProductDetails = () => {
 			{/* This NavLink is different from Link in a way that the className takes a function that automatically
 			passes the isActive as argument which tells us if the link is active right now or not. we can use that
 			to set the css classes  */}
-			<NavLink to="/" className={() => "back-btn"}>
+			<NavLink to="/aura-apparel" className={() => "back-btn"}>
 				<img src={leftArrow} alt="" className="left-arrow" />
 				<span>Back</span>
 			</NavLink>

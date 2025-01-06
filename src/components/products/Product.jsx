@@ -5,16 +5,20 @@ const Product = ({ product }) => {
 	const { id, name, price, images, tagline } = product;
 	const navigate = useNavigate();
 
-console.log(product)
+	console.log(product);
 
 	const handleClick = () => {
-		navigate("/product-details", { state: product });
+		navigate("product-details", { state: product });
 	};
 
 	return (
 		<li className="product-container" onClick={handleClick}>
 			<img
-				src={images[0]}
+				src={
+					window.location.hostname === "akilaa-v.github.io"
+					  ? `/aura-apparel/${images[0]}`
+					  : `/${images[0]}`
+				  }
 				className="product-img"
 			></img>
 			<div className="product-details-container">

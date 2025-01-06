@@ -49,7 +49,11 @@ const Cart = () => {
 					<li key={product.id} className="cart-item">
 						<img
 							className="cart-prdct-img"
-							src={product.image}
+							src={
+								window.location.hostname === "akilaa-v.github.io"
+								  ? `/aura-apparel/${product.image}`
+								  : `/${product.image}`
+							  }
 							alt=""
 						/>
 						<div>{product.name}</div>

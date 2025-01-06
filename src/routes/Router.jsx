@@ -8,7 +8,7 @@ import ErrorPage from "../pages/ErrorPage";
 // This router is then passed to the <RouterProvider router={router} /> in the App.jsx.
 const router = createBrowserRouter([
 	{
-		path: "/",
+		path: "/aura-apparel",
 		element: <RootLayout />,
 		// Displays when the path is not found or when generic errors need to be handled.
 		errorElement: <ErrorPage />,
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
 		children: [
 			// index true mean when the path is "" this element has to be shown
 			{ index: true, element: <ProductList /> },
-			{ path: "/product-details", element: <ProductDetails /> },
+			{ path: "product-details", element: <ProductDetails /> },
 		],
 	},
 ]);

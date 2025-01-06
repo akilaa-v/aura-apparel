@@ -20,7 +20,7 @@ const Header = () => {
 
 	return (
 		<header className="header-container">
-			<Link to="/"><img src={logo} alt="website logo" className="website-logo" /></Link>
+			<Link to="/aura-apparel"><img src={logo} alt="website logo" className="website-logo" /></Link>
 			<form className=".search-form">
             <Input type="text" id="search-bar" placeholder="Search for products"></Input>
         </form>
