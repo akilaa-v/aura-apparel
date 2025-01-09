@@ -2,15 +2,14 @@ footer {
 	position: relative;
 	bottom: 0;
 	text-align: center;
-    border: 1px solid black;
 }
 
 .footer-container {
 	display: flex;
-    height: 80px;
+    flex-direction: column;
 	justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 .contact {
@@ -22,4 +21,10 @@ footer {
 .contact img{
     height: 30px;
     width: 30px;
+}
+
+@media screen and (min-width: 768px) {
+    .footer-container {
+        flex-direction: row;
+    }
 }

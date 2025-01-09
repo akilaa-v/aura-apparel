@@ -21,17 +21,17 @@ const Header = () => {
 	return (
 		<header className="header-container">
 			<Link to="/aura-apparel"><img src={logo} alt="website logo" className="website-logo" /></Link>
-			<form className=".search-form">
+			{/* <form className=".search-form">
             <Input type="text" id="search-bar" placeholder="Search for products"></Input>
-        </form>
-			<User />
+        </form> */}
+			{/* <User /> */}
 			<div className="cart-container">
 				<button className="cart-btn" onClick={handleShowCart}>
 					<img src={cart} className="cart-img"></img>
 					<span>({quantity})</span>
 				</button>
 				{/* <button className="sign-out-btn">Sign out</button> */}
-				<Button>Sign out</Button>
+				{/* <Button>Sign out</Button> */}
 			</div>
 		</header>
 	);

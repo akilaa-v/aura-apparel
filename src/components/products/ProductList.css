@@ -1,12 +1,19 @@
 section {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     row-gap: 20px;
     margin-bottom: 10px;
+    align-items: center;
 }
 
 .center {
     text-align: center;
+}
+
+@media screen and (min-width: 475px) {
+    section {
+        flex-direction: row;
+    }
 }

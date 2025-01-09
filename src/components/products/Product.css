@@ -1,13 +1,14 @@
 .product-container {
     height: 400px;
-    margin: 15px;
-    flex-basis: 20%;
-    flex-grow: 0;
-    flex-shrink: 0;
+    margin: 15px;    
     font-family: inherit;
     display: inline-block;
     transition: all 0.3s ease;
     cursor: pointer;
+    width: 75%;
+    max-width: 280px;
+    min-width: 250px;
+
 }
 
 .product-container:hover {
